@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Product thumbnails -->
+    <LinearLayout
+        android:id="@+id/productThumbnails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product 1 -->
+        <LinearLayout
+            android:id="@+id/product1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="rent"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Product photo -->
+            <ImageView
+                android:id="@+id/product1Photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/screenshot_8" />
+            <!-- Product text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/product1Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/chivo_variable_font_wght"
+                    android:text="Product 1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/product1Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/chivo_variable_font_wght"
+                    android:text="description" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

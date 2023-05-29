@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "214551797013",
+    "project_id": "car-rental-fdd3e",
+    "storage_bucket": "car-rental-fdd3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214551797013:android:a40ca0269a6ed06f509d1c",
+        "android_client_info": {
+          "package_name": "am.itspace.car_rental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214551797013-fm4h61ift56gsqkftodhrfpqkap7j4u7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnH5z79yitLkv3kfs5YJGE62n7a8-8FhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214551797013-fm4h61ift56gsqkftodhrfpqkap7j4u7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

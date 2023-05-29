@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Other views and layouts in the CoordinatorLayout -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdownLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdownAutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:completionThreshold="1"
+            android:hint="Select an item"
+            android:inputType="textAutoComplete"
+            android:textColorHint="#616161" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

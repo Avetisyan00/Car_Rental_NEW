@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_green"
+        android:padding="16dp">
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/home"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:fontFamily="@font/chivo_variable_font_wght"-->
+        <!--            android:text="Home"-->
+        <!--            android:textColor="@android:color/white"-->
+        <!--            android:textSize="18sp"-->
+        <!--            android:textStyle="bold" />-->
+
+        <TextView
+            android:id="@+id/categories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/chivo_variable_font_wght"
+            android:text="Categories"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Search bar -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:fontFamily="@font/chivo_variable_font_wght"
+            android:hint="Search"
+            android:minHeight="48dp"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <!-- Product thumbnails -->
+    <LinearLayout
+        android:id="@+id/productThumbnails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- First item -->
+            <include layout="@layout/item_layout" />
+
+            <!-- Second item -->
+            <include layout="@layout/item_layout" />
+
+            <!-- Third item -->
+            <include layout="@layout/item_layout" />
+
+            <include layout="@layout/item_layout" />
+
+            <!-- Add more items as needed -->
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
