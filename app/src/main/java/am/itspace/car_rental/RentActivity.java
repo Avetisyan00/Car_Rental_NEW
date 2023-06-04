@@ -22,5 +22,6 @@ public class RentActivity extends AppCompatActivity {
 
     public void showCategories(View view) {
         Intent intent = new Intent(this, CategoriesActivity.class);
+        startActivity(intent);
     }
 }

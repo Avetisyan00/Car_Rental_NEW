@@ -26,8 +26,10 @@
             <TextView
                 android:id="@+id/title"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="goHome"
                 android:text="Home"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -36,11 +38,13 @@
             <TextView
                 android:id="@+id/categories"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/chivo_variable_font_wght"
-                android:text="Categories"
+                android:gravity="center"
+                android:minHeight="48dp"
                 android:onClick="showCategories"
+                android:text="@string/categories"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -51,9 +55,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/layout_bg"
-                android:hint="Search"
+                android:hint="@string/search"
+                android:minHeight="48dp"
                 android:textAlignment="center"
-                android:minHeight="36dp"
                 android:textColor="@android:color/white" />
         </LinearLayout>
 
@@ -75,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/chivo_variable_font_wght"
-                android:text="Product Title"
+                android:text="@string/product_title"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -85,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/chivo_variable_font_wght"
-                android:text="$99.99"
+                android:text="@string/_99_99"
                 android:textColor="@color/light_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -108,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Characteristic 1: "
+                        android:text="@string/characteristic_1"
                         android:textStyle="bold" />
 
                     <TextView
@@ -116,7 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Value 1" />
+                        android:text="@string/value_1" />
                 </LinearLayout>
 
                 <!-- Characteristic 2 -->
@@ -131,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Characteristic 2: "
+                        android:text="@string/characteristic_2"
                         android:textStyle="bold" />
 
                     <TextView
@@ -139,7 +143,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Value 2" />
+                        android:text="@string/value_2" />
                 </LinearLayout>
 
                 <!-- Characteristic 3 -->
@@ -154,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Characteristic 3: "
+                        android:text="@string/characteristic_3"
                         android:textStyle="bold" />
 
                     <TextView
@@ -162,7 +166,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/chivo_variable_font_wght"
-                        android:text="Value 3" />
+                        android:text="@string/value_3" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -174,18 +178,19 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/chivo_variable_font_wght"
-                android:text="TextView" />
+                android:text="@string/rating" />
 
             <RatingBar
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"
+                android:clickable="false"/>
         </LinearLayout>
 
         <Button
@@ -194,7 +199,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_green"
             android:onClick="submittingToast"
-            android:text="rent now!" />
+            android:text="@string/rent_now" />
     </LinearLayout>
 
     <!-- Product information -->

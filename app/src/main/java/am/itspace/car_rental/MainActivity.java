@@ -16,23 +16,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Initialize Firebase
-        FirebaseApp.initializeApp(this);
-        // Get a reference to the Firebase Realtime Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("https://car-rental-fdd3e-default-rtdb.firebaseio.com");
+        if (FirebaseApp.getApps(this).isEmpty()) {
+            FirebaseApp.initializeApp(this);
+        }
+
+        // Connect to Firebase Realtime Database
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://car-rental-tod10n-default-rtdb.firebaseio.com");
+        DatabaseReference myRef = database.getReference();
 
         // Write data to the database
-        myRef.setValue("Hello, Firebase!");
+        myRef.child("message").setValue("Hello, Firebase!");
 
         // Read data from the database
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.child("message").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
@@ -48,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void rent(View view) {
         Intent intent = new Intent(this, RentActivity.class);
+        startActivity(intent);
+    }
+
+    public void goHome(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void showCategories(View view) {
+        Intent intent = new Intent(this, CategoriesActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

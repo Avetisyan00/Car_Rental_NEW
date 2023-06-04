@@ -4,4 +4,48 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="select_the_category">select the category</string>
+    <string name="categories">Categories</string>
+    <string name="search">Search</string>
+    <string name="submit">submit</string>
+    <string name="choose_the_category">Choose the category</string>
+    <string name="choose_who_do_you_want_to_become">Choose who do you want to become</string>
+    <string name="become_a_dealer">Become a dealer</string>
+    <string name="become_a_driver">Become a driver</string>
+    <string name="become_a_client">Become a client</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="rent_now">rent now!</string>
+    <string name="rating">Rating</string>
+    <string name="value_3">Value 3</string>
+    <string name="characteristic_3">Characteristic 3:</string>
+    <string name="value_2">Value 2</string>
+    <string name="characteristic_2">Characteristic 2:</string>
+    <string name="value_1">Value 1</string>
+    <string name="characteristic_1">Characteristic 1:</string>
+    <string name="_99_99">$99.99</string>
+    <string name="product_title">Product Title</string>
+    <string name="input_your_price_per_hour">Input your price per hour</string>
+    <string name="driver_licence_question">What driver licence category do you have</string>
+    <string name="back">Back</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="add_you_profile_picture">Add you profile picture</string>
+    <string name="add">Add</string>
+    <string-array name="car_category_array">
+        <item>Jeep</item>
+        <item>Cargo</item>
+        <item>Limousine</item>
+        <item>SUV</item>
+        <item>Sedan</item>
+    </string-array>
+    <string-array name="driver_licence_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C1</item>
+        <item>D1</item>
+        <item>DE</item>
+    </string-array>
+
 </resources>
