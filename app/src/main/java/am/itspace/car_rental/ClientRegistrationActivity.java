@@ -54,7 +54,7 @@ public class ClientRegistrationActivity extends AppCompatActivity {
             RegistrationDto registeredUser = new RegistrationDto();
             registeredUser.setName(nameField.toString());
             registeredUser.setSurname(surnameField.toString());
-            registeredUser.setAge(Integer.parseInt(String.valueOf(ageField)));
+            registeredUser.setAge(Integer.parseInt(ageField.getText().toString()));
             registeredUser.setEmail(emailField.toString());
             registeredUser.setPhoneNumber(phoneNumberField.toString());
             registeredUser.setPassword(passwordField.toString());

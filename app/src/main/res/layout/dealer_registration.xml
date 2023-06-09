@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/registration_dealer_back"
         layout="@layout/back_button"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/include" />
+        app:layout_constraintTop_toTopOf="@+id/registration_dealer_back" />
 
     <EditText
         android:id="@+id/input_surname"
