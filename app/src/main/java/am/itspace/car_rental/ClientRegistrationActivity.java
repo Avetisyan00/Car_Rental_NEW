@@ -1,21 +1,24 @@
 package am.itspace.car_rental;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ClientRegistrationActivity extends AppCompatActivity {
-    private static final int REQUEST_CAMERA = 2;
+import com.google.android.material.textfield.TextInputEditText;
 
-    private Button openCameraButton;
+import am.itspace.car_rental.dto.RegistrationDto;
+import am.itspace.car_rental.model.User;
+import am.itspace.car_rental.retrofit.RetrofitService;
+import am.itspace.car_rental.retrofit.UserApi;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ClientRegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,32 +36,39 @@ public class ClientRegistrationActivity extends AppCompatActivity {
         // Apply the adapter to the spinner
         staticSpinner.setAdapter(staticAdapter);
 
-        openCameraButton = findViewById(R.id.imageButton);
-        openCameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCamera();
-            }
+        initializeComponents();
+    }
+
+    private void initializeComponents() {
+        TextInputEditText nameField = findViewById(R.id.input_name);
+        TextInputEditText surnameField = findViewById(R.id.input_surname);
+        TextInputEditText ageField = findViewById(R.id.input_age);
+        TextInputEditText emailField = findViewById(R.id.input_email);
+        TextInputEditText phoneNumberField = findViewById(R.id.input_phone_number);
+        TextInputEditText passwordField = findViewById(R.id.input_password);
+        Button submitButton = findViewById(R.id.submit_button);
+
+        RetrofitService retrofitService = new RetrofitService();
+        UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
+        submitButton.setOnClickListener(view -> {
+            RegistrationDto registeredUser = new RegistrationDto();
+            registeredUser.setName(nameField.toString());
+            registeredUser.setSurname(surnameField.toString());
+            registeredUser.setAge(Integer.parseInt(String.valueOf(ageField)));
+            registeredUser.setEmail(emailField.toString());
+            registeredUser.setPhoneNumber(phoneNumberField.toString());
+            registeredUser.setPassword(passwordField.toString());
+            userApi.clientRegistration(registeredUser).enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    Toast.makeText(ClientRegistrationActivity.this, "Save Succeeded", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Toast.makeText(ClientRegistrationActivity.this, "Save Failed", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
-    }
-
-    private void openCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, REQUEST_CAMERA);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK && data != null) {
-            Bundle extras = data.getExtras();
-            if (extras != null) {
-                Uri imageUri = data.getData();
-
-            }
-        }
     }
 }
